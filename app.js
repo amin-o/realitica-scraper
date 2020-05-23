@@ -5,10 +5,12 @@ const app = express();
 const cron = require("node-cron");
 const axios = require('axios')
 const scraperMiddleware = require("./middleware/scraper");
+const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'hbs');
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', (req, res) => {
 
@@ -17,8 +19,8 @@ app.get('/', (req, res) => {
 });
 
 
-//cron job | Scrape realitica every minute
-const task = cron.schedule('* * * * *', async (req, res) =>  {
+//cron job | Scrape realitica every 5 minutes
+const task = cron.schedule('*/5 * * * *', async (req, res) =>  {
 
     console.log('Cron job running...');
     scraperMiddleware.scrapeOnly();
