@@ -1,0 +1,20 @@
+{
+  "name": "scraper_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amin-o",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "csv-file-to-json": "^4.0.3",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "node-cron": "^2.0.3",
+    "objects-to-csv": "^1.3.6"
+  }
+}
